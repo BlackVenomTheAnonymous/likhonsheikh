@@ -3,7 +3,7 @@ from telegram.ext import Updater, CommandHandler, CallbackContext
 from handlers import register_handlers
 # Create an instance of the Updater and pass your bot token
 updater = Updater('YOUR_TELEGRAM_BOT_TOKEN', use_context=True)
-dispatcher = updater.dispatcher
+dispatcher = updater.register_handlers(dispatcher)
 
 def start(update: Update, context: CallbackContext):
     # Logic for handling the /start command
