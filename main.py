@@ -1,6 +1,6 @@
 from telegram import Update, InlineKeyboardMarkup, InlineKeyboardButton
 from telegram.ext import Updater, CommandHandler, CallbackContext
-
+from handlers import register_handlers
 # Create an instance of the Updater and pass your bot token
 updater = Updater('YOUR_TELEGRAM_BOT_TOKEN', use_context=True)
 dispatcher = updater.dispatcher
