@@ -1,36 +1,21 @@
-from telegram import Update, InlineKeyboardMarkup, InlineKeyboardButton
-from telegram.ext import Updater, CommandHandler, CallbackContext
-from handlers import register_handlers
+from telegram.ext import Updater
+from commands import start, bin, grab, gen, ac, cmds, sk, status, donet, copy
+
 # Create an instance of the Updater and pass your bot token
 updater = Updater('YOUR_TELEGRAM_BOT_TOKEN', use_context=True)
-dispatcher = updater.register_handlers(dispatcher)
+dispatcher = updater.dispatcher
 
-def start(update: Update, context: CallbackContext):
-    # Logic for handling the /start command
-    # ...
-
-def bin(update: Update, context: CallbackContext):
-    # Logic for handling the /bin command
-    # ...
-
-def grab(update: Update, context: CallbackContext):
-    # Logic for handling the /grab command
-    # ...
-
-def gen(update: Update, context: CallbackContext):
-    # Logic for handling the /gen command
-    # ...
-
-def ac(update: Update, context: CallbackContext):
-    # Logic for handling the /ac command
-    # ...
-
-# Register the command handlers
-dispatcher.add_handler(CommandHandler('start', start))
-dispatcher.add_handler(CommandHandler('bin', bin))
-dispatcher.add_handler(CommandHandler('grab', grab))
-dispatcher.add_handler(CommandHandler('gen', gen))
-dispatcher.add_handler(CommandHandler('ac', ac))
+# Register the command handlers from the separate files
+dispatcher.add_handler(start.handler)
+dispatcher.add_handler(bin.handler)
+dispatcher.add_handler(grab.handler)
+dispatcher.add_handler(gen.handler)
+dispatcher.add_handler(ac.handler)
+dispatcher.add_handler(cmds.handler)
+dispatcher.add_handler(sk.handler)
+dispatcher.add_handler(status.handler)
+dispatcher.add_handler(donet.handler)
+dispatcher.add_handler(copy.handler)
 
 # Run the bot
 updater.start_polling()
