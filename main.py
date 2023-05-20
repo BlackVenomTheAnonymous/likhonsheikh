@@ -2,7 +2,7 @@ from telegram.ext import Updater
 from commands import start, bin, grab, gen, ac, cmds, sk, status, donet, copy
 
 # Create an instance of the Updater and pass your bot token
-updater = Updater('YOUR_TELEGRAM_BOT_TOKEN', use_context=True)
+updater = Updater('5951642700:AAFCSfs7l22xw3d21ZO3bOOA-2rI1S1lCc0', use_context=True)
 dispatcher = updater.dispatcher
 
 # Register the command handlers from the separate files
